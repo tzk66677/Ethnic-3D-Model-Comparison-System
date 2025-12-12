@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Demo</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
+    <link rel="stylesheet" href="public/main.css" />
+    <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@v0.149.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.149.0/examples/jsm/"
+      }
+    }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+
+  <body>
+    <div class="w-full glass-header p-4">
+      <div class="max-w-6xl mx-auto flex justify-between items-center">
+        <h1 id="title" class="text-2xl font-bold tracking-wide text-white">
+          民族 3D 模型对比系统
+        </h1>
+
+        <button
+          id="toggle-lang"
+          class="px-4 py-2 rounded bg-gradient-to-r from-blue-600 to-blue-500 text-white font-medium shadow-md hover:opacity-90 transition"
+        >
+          English
+        </button>
+      </div>
+    </div>
+
+    <div id="app" class="p-6 max-w-6xl mx-auto space-y-6">
+      <div class="grid grid-cols-2 gap-6">
+        <div id="panel-a" class="card-dark rounded-xl shadow-lg p-5 flex flex-col">
+          <h2
+            id="panel-a-title"
+            class="text-lg font-semibold mb-3 text-center text-white border-b border-white/10 pb-2"
+          >
+            Model A
+          </h2>
+          <div class="flex gap-3 mb-4">
+            <select id="group-select-a" class="p-2 rounded flex-1 dark-select">
+              <option value="">选择民族</option>
+            </select>
+            <select id="gender-select-a" class="p-2 rounded w-32 dark-select">
+              <option value="male">男性</option>
+              <option value="female">女性</option>
+            </select>
+          </div>
+          <div
+            id="model-a"
+            class="flex-1 rounded bg-[#1b1b1f] border border-white/10 flex items-center justify-center"
+          >
+            <div class="text-center text-gray-400">
+              <div id="model-a-filename" class="text-xs mt-2 opacity-70">
+                <canvas id="canvas_a" style="width: 498px;height: 393px"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4">
+            <h3 id="desc-title-a" class="font-semibold text-white mb-1">民族说明</h3>
+            <p id="desc-a" class="text-sm text-gray-400">请选择民族...</p>
+          </div>
+        </div>
+
+        <div id="panel-b" class="card-dark rounded-xl shadow-lg p-5 flex flex-col">
+          <h2
+            id="panel-b-title"
+            class="text-lg font-semibold mb-3 text-center text-white border-b border-white/10 pb-2"
+          >
+            Model B
+          </h2>
+
+          <div class="flex gap-3 mb-4">
+            <select id="group-select-b" class="p-2 rounded flex-1 dark-select">
+              <option value="">选择民族</option>
+            </select>
+
+            <select id="gender-select-b" class="p-2 rounded w-32 dark-select">
+              <option value="male">男性</option>
+              <option value="female">女性</option>
+            </select>
+          </div>
+
+          <div
+            id="model-b"
+            class="flex-1 rounded bg-[#1b1b1f] border border-white/10 flex items-center justify-center"
+          >
+            <div class="text-center text-gray-400">
+              <div id="model-b-filename" class="text-xs mt-2 opacity-70">
+                <canvas id="canvas_b" style="width: 498px;height: 393px"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4">
+            <h3 id="desc-title-b" class="font-semibold text-white mb-1">民族说明</h3>
+            <p id="desc-b" class="text-sm text-gray-400">请选择民族...</p>
+          </div>
+        </div>
+      </div>
+
+      <footer class="w-full mt-10 py-6 bg-black/20 backdrop-blur border-t border-white/10">
+        <div class="max-w-6xl mx-auto px-4 text-center text-gray-500 text-sm">
+          <p class="mb-1">This interface is a demonstration of a generic 3D model comparison system.</p>
+          <p class="opacity-70">All data and examples used here are for display and testing purposes only.</p>
+        </div>
+      </footer>
+    </div>
+    <script type="module" src="./public/main.js"></script>
+  </body>
+</html>
